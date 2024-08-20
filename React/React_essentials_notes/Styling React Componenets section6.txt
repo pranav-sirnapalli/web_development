@@ -1,0 +1,137 @@
+Styling React Componenets section6
+
+** Applying inline styles using css, this is done by applying css directly in the 
+   JSX instead of in a separate css file.
+
+- Advantage of inline styling is that it only affects the jsx element on which you add them
+- In the below code the <p> tag is using inline style.
+
+Sample code:
+
+export default function Header() {
+  return (
+    <header>
+      <img src={logo} alt="A canvas" />
+      <h1>ReactArt</h1>
+      <p style={{
+        color: 'red',
+        textAlign: 'left';
+      }}>A community of artists and art-lovers.</p>
+    </header>
+  );
+}
+
+- The Inline styles can also be used to create conditional styles
+- In the code below it can be seen with the input tag:
+
+Sample Code:
+<p>
+   <label>Email</label>
+   <input
+    type="emial"
+    style={{
+	backgroundColor: emailNotValid? '#fed2d2' : '#d1d5db';
+    }}
+    onChange{(event)} => handleInputChange('email', event.target.value)
+    />
+</p>
+
+** Dynamic styling and permenant styling:
+- Some values can be added permantly and some can be added dynamically and this is shown for the
+  label tag below.
+- under class name the `label has been added permenantly and is already a part of the .css
+- The ${emailNotValid? 'invalid' : ''} is a dynamically added value which is being pushed into code
+  right now.
+- The `` are another way of creating string in javascript
+
+<label className = {`label ${emailNotValid ? 'invalid' : ''}`}> Email </label>
+
+** Scoping css rules with css modules:
+
+- We can use modules to build css a little differently:
+- By doing so you will import using whatever name you imported with .classname in the file
+- The file will be saved as module.css, example below for header it is stored as
+  Header.module.css .
+
+Sample Code:
+
+- Header.module.css
+
+.paragraph{
+  text-align: center;
+  color: #a39191;
+  margin: 0;
+}
+
+
+- Header.jsx:
+
+import classes from './Header.module.css';
+
+export default function Header()
+{
+   return(
+     <header>
+	<img src={logo} alt="A canvas"/>
+	<h1> ReactArt </h1>
+        <p className = {classes.paragraph}"> A community of artists.</p>
+     </header>
+   );
+}
+
+** Using styled-componenets package to style the components after installing.
+
+For expamle in AuthInputs.jsx after header files you can write:
+
+styled.div``		// This is called a tag template
+
+We can store this style in some variable, for example:
+
+const ControlContainer = styled.div`
+   display:flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   margin-bottom: 1.5 rem;
+`
+
+** The above const can now be added as a tag and replace
+   the div tag.i.e you can write ControlContainer in that place now.
+
+<div id="auth-inputs">
+      <ControlContainer>
+        <p> 
+          <label className={`label ${emailNotValid? 'invalid': ''}`}>Email</label>
+          <input
+            type="email"
+            className={emailNotValid ? 'invalid' : undefined}
+            onChange={(event) => handleInputChange('email', event.target.value)}
+          />
+        </p>
+        <p>
+          <label>Password</label>
+          <input
+            type="password"
+            style={{
+              backgroundColor: emailNotValid ? '#fed2d2' : '#d1d5db'
+            }}
+            className={passwordNotValid ? 'invalid' : undefined}
+            onChange={(event) =>
+              handleInputChange('password', event.target.value)
+            }
+          />
+        </p>
+      </ControlContainer>
+      <div className="actions">
+        <button type="button" className="text-button">
+          Create a new account
+        </button>
+        <button className='button' onClick={handleLogin}>Sign In</button>
+      </div>
+    </div>
+  );
+
+Tailwind css:
+- Used to provide css in another way instead of just vanilla css, 
+- It is used to add additional tiny utilities than the ones that are already defined
+  in general, it makes the design more high definition.
+

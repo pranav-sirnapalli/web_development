@@ -1,0 +1,40 @@
+React essentials section4:
+
+** Wrappers in JSX:
+- Every JSX code needs a wrapper that is why in below code <div> tag is required
+
+return(
+   <div>
+	<Header/>
+	<main>
+	</main>
+   </div>
+)
+
+- If you remove above <div> it will give an error as it needs to be wrapped in single tag in JSX.
+
+* You can use fragment instead of div so that you don't include an additional tag in code:
+
+Syntax code Ex by replacing div with fragment:
+
+import { useState, Fragment } from 'react';
+
+return(
+	<Fragment>
+		<Header/>
+		<main>
+		</main>
+	</Fragment>
+);
+
+* However, in new project you don't need to import and use it just empty tags would be enough
+
+Sample Code:
+
+return(
+	<>
+		<Header/>
+		<main>
+		</main>
+	</>
+);

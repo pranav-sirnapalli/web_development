@@ -1,0 +1,177 @@
+- Tags provide content structure, not layout or style
+
+- Paragraph tag <p>
+<p> hello world</p>
+
+- The style attribute
+<p style="color:red;"> This is a red paragraph.</p>
+
+- Headings
+<h1> Main heading </h1>
+<h2> Second heading </h2>
+<h6> Smallest heading </h6>
+Headings with style:
+<h1 style="font-size:60px;"> Heading 1 </h1>
+
+<h1> defines the most important heading.
+<h6> defines the least important heading.
+
+- Images
+<img src="dog.png" alt="dog"/>
+<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+
+src: Holds the url of where the image is
+alt: Incase image is not shown, what to show
+width: Width of image to display
+Height: Height of image to display
+
+The url used for src and alt can be of two types:
+
+1. Absolute URL - Links to an external image that is hosted on another website. Example: src="https://www.w3schools.com/images/img_girl.jpg".
+
+2. Relative URL - Links to an image that is hosted within the website. Here, the URL does not include the domain name. If the URL begins without a slash, it will be relative to the current page. 
+Example: src="img_girl.jpg". If the URL begins with a slash, it will be relative to the domain. Example: src="/images/img_girl.jpg".
+
+Tip: It is almost always best to use relative URLs. They will not break if you change domain.
+
+- Lists
+of two types orders: <ol> and unordered: <ul>
+
+Order list:
+<ol>
+   <li> list item 1</li>
+   <li> list item 2 </li>
+   <li> list item 3 </li>
+</ol>
+
+Unordered list:
+<ul>
+   <li> list item 1 </li>
+   <li> list item 2 </li>
+   <li> list item 3 </li>
+</ul>
+
+
+Pre tag: 
+- It is a preformatted text tag.
+- This tag preserved whitespace, which can be useful when indentation and newlines need
+  to be preserved
+- Code:
+<pre>
+     *
+    ***
+   *****
+  *******
+ *********
+</pre>
+
+break tag:
+- similar function as pre tag with respect to spaces
+- This is an empty tag used to create a line break in text,
+  suck as for introduction of an email
+- Code:
+  <p>
+  Dear user, <br/>
+  We hope you are enjoying!
+  </p>
+
+Horizontal rule:
+- It is used when we need to create a thematic break between content
+- Draws a horizontal line by default
+- Code:
+  <p> Part 1 </p>
+  <hr/>
+  <p> Part 2 </p>
+
+Anchor tag:
+- The tag is used to link to other pages.
+- This tag should include an href attribute with the path to the page being linked(absolute or relative)
+- Code:
+  <a href="https://algoexpert.io">AlgoExpert</a>
+- Other attributes
+ target: "where to open new tab or new browser"
+
+
+Bold tag:
+- To define bold text
+<b> In bold </b>
+
+Strong tag:
+- To show text in bold
+- Code:
+  <p> <strong> Note:</strong> This is important!</p>
+
+Italics tag:
+- To show text in italics
+- Code:
+  <i> In italics </i>
+
+Empasis tag:
+- Used when certain text needs to be empasised
+- Default is italics
+- Code:
+
+  <p> <em> need </em>to studey </p>
+
+Small tag:
+- To define text little smaller than normal text appearence
+- Code:
+  <small> This is some smaller text. </small>
+
+Mark tag:
+- Defines text that should be marked or highlighted
+<p> Do not forget to buy <mark> milk</mark> </p>
+
+del tag:
+- The HTML <del> element defines text that has been deleted from a document. Browsers will usually
+  strike a line through deleted text
+- <p>My favorite color is <del>blue</del> red.</p>
+
+ins tag:
+- Defines text that has been inserted into doc
+- <p>My favorite color is <ins>blue</ins> red.</p>
+
+sub tag:
+- The HTML <sub> element defines subscript text. Subscript text appears half a character below the
+   normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical
+   formulas, like H2O
+
+- Ex: <p> This is <sub> subscripted </sub> text.</p>
+
+sup tag:
+- The HTML <sup> element defines superscript text.
+- Superscript text appears half a character above the normal line and is sometimes rendered in smaller
+  font.
+- Ex: <p> This is<sup>superscripted</sup>text.</p>
+
+blockquote tag:
+- Defines a section that is quoted from another source.
+- <blockquote> elements.
+- Eg:
+  <p>Here is a quote from WWF's website:</p>
+
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+</blockquote>
+
+- Output:
+Here is a quote from WWF's website:
+
+     For 60 years, WWF has worked to help people and nature thrive. As the world's leading 
+     conservation organization, WWF works in nearly 100 countries. At every level, we 
+     collaborate with people around the world to develop and deliver innovative solutions 
+     that protect communities, wildlife, and the places in which they live.
+
+quote tag:
+- <q> tag for short quotations
+- Ex: 
+  <p>WWF's goal is to:<q>Build a future where people live in harmony with nature.</q></p>
+
+abbr tag:
+
+- The HTML <abbr> tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
+- <p> The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+address tag:
+
+- 

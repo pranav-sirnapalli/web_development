@@ -1,0 +1,101 @@
+body {
+  background-color: #b7d7e8; /* Light blue */
+  margin: 20px; /* Add margin */
+  padding: 10px; /* Add padding */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  margin: 0 auto; 
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
+
+.error {
+  color: black;
+}
+
+.custom-data {
+  font-weight: bold; 
+  font-size: 1.5rem; 
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.custom-card {
+  height: 100px; 
+  max-width: 700px; 
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #3e3e3e; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 10px; 
+}
+
+.card-container {
+  margin-bottom: 20px; 
+}    
+ 
+.table-container {
+  width: 100%; 
+  padding: 0 20px;
+  display: flex ; 
+  justify-content: center;
+  overflow: auto;
+  max-height: 80vh;  
+}
+
+.custom-btn {
+  display: inline-flex;
+  gap: 10px; 
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.modal-content {
+  background-color: #343a40; 
+  color: white; 
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6; /* Add a subtle border bottom for separation */
+  background-color: #343a40; /* Add a background color for contrast */
+  color: white;
+}
+
+.modal-body, 
+.modal-footer {
+  border-color: #454d55; 
+}
+
+.modal-title,
+.modal-body label,
+.modal-footer .btn {
+  color: white;
+}
+
+.modal-body {
+  background-color: #f8f9fa; 
+  padding: 20px; 
+}
+
+.modal-footer {
+  background-color: #343a40; 
+  padding: 10px 20px; 
+  border-top: 1px solid #dee2e6; /* Add a subtle border top for separation */
+}

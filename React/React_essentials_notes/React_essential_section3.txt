@@ -1,0 +1,291 @@
+React Essentials:
+- Contains Components, JSX, Props, States and Dynamic styling and output
+
+React basic:
+
+- Two write a component in react, name starts with uppercase characters and should be written in
+  main file.
+- The main file will contain components as Renderable names and the function must return a value
+  that can be rendered.
+
+Eg: Assume App.jsx is the mainfile and Header and UserInput are render files
+
+In main file:
+
+function App()
+{
+   return(
+   <>
+        <Header/>
+	<UserInput/>
+   </>);
+}
+
+éxport default App
+
+In Header file:
+
+import logo from '../assets/investment-calculator-logo.png';
+
+export default function Header(){
+    return (<header id="header">
+        <img src = {logo} alt="Logo showing a bag"/>
+        <h1>Investment Calc</h1>
+    </header>)
+}
+
+In UserInput file:
+
+
+import { useState } from "react"
+
+export default function UserInput(){
+
+    
+    const [UserInput, setUserInput] = useState({
+        initialInvestment: 3000,
+        annualInvestment: 1200,
+        expectedReturn: 6,
+        duration: 10,
+     });
+
+    function handleChange(inputIdentifier, newValue){
+        setUserInput(prevUserInput =>{
+            return{
+                ...prevUserInput,
+                [inputIdentifier]: newValue
+            };
+        });
+    }
+
+    return(<section id="user-input">
+        <div className="input-group">
+            <p>
+                <label>Initial</label>
+                value = {UserInput.initialInvestment}
+                <input type="number" required onChange={(event) => handleChange('Initial', event.target.value)}/>
+            </p>
+
+            <p>
+                <label>Annual</label>
+                <input type="number" required 
+                onChange={(event) => handleChange('Annual', event.target.value)}/>
+            </p>
+        </div>
+
+        <div className="input-group">
+            <p>
+                <label>Return expectation</label>
+                <input type="number" required
+                onChange={(event) => handleChange('Return expectation', event.target.value)}/>
+            </p>
+
+            <p>
+                <label>Net duration</label>
+                <input type="number" required
+                onChange={(event) => handleChange('Return expectation', event.target.value)}/>
+            </p>
+        </div>
+
+    </section>)
+
+}
+
+** index.jsx:
+   - This file contains the entry point of the whole react components
+   - In this file an entry point is declared which would be the starting point and
+     the root of the whole react code.
+
+   - Eg:
+     import ReactDOM from "react-dom/client";
+     import App from "./App.jsx";
+     import "./index.css";
+
+     const entryPoint = document.getElementById("root");
+     ReactDOM.createRoot(entryPoint).render(<App />);
+
+ * Here if we had a file Abc.jsx for ex and we want to use it as root, then instead of App, we write
+   <Abc/>
+
+** Dynamic values in React
+
+Sample Code:
+
+const reactDescription = ['Fundamental', 'Crucial', 'Core'];
+
+function getRandomInt(max)
+{
+   return Math.floor(Math.random() * (max+1));
+}
+
+function Header()
+{
+    return(
+	<header>
+	 <p>
+	   {reactDescription(getRandomInt(2))} React concepts you will need for almost any app you are
+	   going to build.
+	</p>
+ 	</header>
+    );
+}
+
+** To add a picture to a file like app.jsx:
+- Don't just add the path to the img tab
+- import it on top of file in that way while
+  building it will include that file
+
+Eg in App.jsx:
+
+import reactImg from './assests/react-core-concepts.png';
+
+** Props in React
+- Props are used when we want to add data of a particular type to the render call itself
+- This data can then be caught by the component and output can be given from that location
+
+Sample code:
+
+function CoreConcept(props) // any name can be used not necessarilty props
+{
+  return(
+   <li>
+	<img src={props.image} alt={props.title}/>
+	<h3>{props.title}</h3>
+	<p>{props.description}</p>
+   </li>
+  );
+}
+
+function App()
+{
+   <ul>
+	<CoreConcept title="Components"
+	description="The core UI building block"
+	image = {componentsImg}/>
+   </ul>
+}
+// Here title, description and image are props which can be accessed by CoreConcept components
+
+**props.children:
+- It is a default value held by every props.
+- If a html tab is given a value like 'component' given in code below
+  then, to access that value we use props.children.
+
+App.jsx specific part:
+
+<section id="examples">
+  <h2> Examples </h2>
+  <menu>
+	<TabButton>Components</TabButton>
+  </menu>
+</section>
+
+TabButton.jsx:
+
+export default function TabButton(props)
+{
+   return <li><button>{props.children}</button></li>;
+}
+
+** onClick() in react should always point to a function
+   it should tell us what function to execute when clicked on
+  - You have to pass just the name of function as it needs to be
+    passed as a value, don't add the function call
+
+Ex code:
+
+export default function TabButton({children})
+{
+   function handleClick()
+   {
+	console.log('Hello World');
+   }
+
+   return(
+	<li>
+	   <button onClick={handleClick}>{children}</button>
+	</li>
+   );
+}
+
+** If you want to send function as value above you need to change code into app.js into this
+
+function handleSelect(selectedButton){
+    // selectedButton => 'components', 'jsx', 'props', 'state'
+    console.log(selectedButton);
+    tabContent = selectedButton;
+  }
+
+
+<section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
+          </menu>
+          {tabContent}
+</section>
+- Only added pieces of code but the point is you need to call it as an arrow function so that
+  value can be passed.
+
+** Use of states in react:
+- The use state is required when we need to tell react to update the UI
+- React only executes a particular component once so by using this we can
+  make sure it is executing more than once by changing the state
+- To import it:
+  import { useState } from 'react';  // anything with 'use' in front of it is a hook.
+- Rules for hoooks:
+  - Only call Hooks inside a component function
+  - Only call Hooks on the top level
+- The return value from a use state will always be two values
+  ex: 
+     const stateArray = useState('Please click a button');
+     // elements will be stored as stateArray[0] and stateArray[1]
+
+     You can destructure the array to store it separately in values
+     const [ selectedTopic, setSelectedTopic ] = useState('Please click a button');
+
+
+** Outputting list data dynamically
+- Using map function you can output the data dynamically.
+- Sample code below to show it.
+- First code shows how it is done in terms repetitive code
+
+<ul>
+   <CoreConcept 
+        title={CORE_CONCEPTS[0].title}
+        description={CORE_CONCEPTS[0].description}
+        image={CORE_CONCEPTS[0].image}/>
+
+   <CoreConcept
+        title={CORE_CONCEPTS[1].title}
+        description={CORE_CONCEPTS[1].description}
+        image={CORE_CONCEPTS[1].image}/>
+
+   <CoreConcept
+        title={CORE_CONCEPTS[2].title}
+        description={CORE_CONCEPTS[2].description}
+        image={CORE_CONCEPTS[2].image}/>
+
+    <CoreConcept
+        title={CORE_CONCEPTS[3].title}
+        description={CORE_CONCEPTS[3].description}
+        image={CORE_CONCEPTS[3].image}/>
+
+</ul>
+
+
+- Second code below shows the same function above dynamically
+- In other words dynamic output:
+
+<section id="core-concepts">
+          <h2>Core concepts</h2>
+          <ul>
+            {CORE_CONCEPTS.map((conceptItem) =>(
+              <CoreConcept {...conceptItem}/>
+            ))}
+          </ul>
+</section>
+

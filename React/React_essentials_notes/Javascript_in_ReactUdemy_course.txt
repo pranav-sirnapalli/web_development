@@ -1,0 +1,167 @@
+Javascript for React in Udemy course:
+
+**while calling javascript in HTML, you can use defer when
+you want to wait till whole html code is run before calling script.
+
+Ex:
+<html>
+	<head>
+	   <script src="assets/scripts/app.js" defer> </script>
+	</head>
+	<body>
+	</body>
+</html>
+
+**while calling javascript in HTML, you can use module when
+you want to wait to import the javascript code into another file.
+
+Ex:
+<html>
+<head>
+	<script src="assets/scripts/app.js" type="module"> </script>
+	</head>
+	<body>
+	</body>
+</html>
+
+**importing and exporting variables from one file to another.
+This is used when one variable in a file needs to be available in other files too.
+You can declare it in one file with export keyword so it is available in another where import
+keyword is used
+
+Example code:
+
+In util.js:
+
+export let apiKey = "adnasdoasflak1";
+
+In app.js:
+
+import {apiKey} from "./util.js"  
+
+** You need to use type="module" for the import and export keywords to work
+
+* another way to import and export is storing as an object
+
+In util.js:
+
+export default "andnaskafef"
+export let apiKey = "afjeoiwfjew"
+export let abc = "abc"
+
+In app.js:
+
+import * as utils from ./util.js
+
+console.log(utils.apiKey)
+console.log(utils.abc)
+
+** Arrow functions:
+- It is a syntax used when we deal with functions that don't need a name
+
+Syntax: () =>
+Eg: onClick = {() => setActiveContentIndex(0)}
+
+- Another way to define anonymous function is:
+
+export default function() =>
+{
+   console.log('Hello')
+}
+
+OR
+
+export default (userName, message) =>{
+   console.log('Hello')
+   return userName + message
+}
+
+**Using functions in variables
+
+const user = {
+  name: "Max",
+  age: 34,
+  greet(){
+    console.log("Hello!");
+    console.log(this.age);
+  }
+  };
+
+user.greet();
+
+O/P: 34
+
+** Classes in Javascript
+
+class User{
+  constructor(name, age){
+	this.name = name;
+        this.age = age;
+  }
+
+  greet(){
+       console.log("Hi!");
+  }
+}
+
+const user1 = new User("Manuel", 35); // Object made of above class
+console.log(user1);
+user1.greet();
+
+** arrays
+
+const hobbies = ["Sports", "Cooking", "Reading"];
+console.log(hobbies[0]);
+
+- Adding values to array:
+
+hobbies.push("Working")
+
+- Finding index of value:
+
+hobbies.findIndex((item)=> {
+   return item === 'Sports';
+})
+
+- Map function in arrays: used to change each element in array
+  into something different depending on function written for map
+
+Ex: hobbies = ["Sports", "Cooking", "Reading", "Working"]
+    const editedHobbies = hobbies.map((item)=>item + "!");
+
+** Destructuring can be done as follows:
+
+const[firstName, lastName] = ["Max", "Schwarzmuller"];
+
+console.log(firstName)
+console.log(lastName)
+
+// As above it can be broken down into variables due to destructuring
+// Similarly it can be done for structures
+
+const {name, age} = {
+  name: "Max",
+  age: 34
+};
+
+console.log(name);
+console.log(age);
+
+** Spread operator: 
+- used when we want to pull out a value from the array and merge it into another
+- Unlike the nested array this will combine it into a single array
+- the spread operator is: ...
+- Ex code:
+
+const hobbies = ["Sports", "Cookking"]
+const newHobbies = ["Reading"]
+
+const mergedHobbies = [...hobbies, ...newHobbies]
+console.log(mergedHobbies)
+
+O/P: ["Sports", "Cooking", "Reading"]
+
+- Spread operator can also be used on objects
+
+** Prompt function: Used to create prompt for catching data
+Password = prompt("Enter the name: ");

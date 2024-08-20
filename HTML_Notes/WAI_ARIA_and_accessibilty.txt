@@ -1,0 +1,175 @@
+Accessibility:
+- Certain practices are followed and some markup elements are included when 
+  we design with accesibility in mind.
+- Building applications usable by as many as possible.
+- Oftentimes this means utilizing semantic HTML and ensuring the application works
+  properly with various assistive technologies.
+
+Accessibility Tree:
+- Used to define accessibility information similar to DOM tree
+- This tree has multiple nodes which hold information on:
+  name, description, role and state.
+- The accessibility tree is created from the DOM tree and kept in sync
+  with it. 
+- Assistive technologies such as screen readers, interact with the accessibility
+  tree rather than directly with the DOM.
+
+Rules to follow to write accessibilty tree
+- Use descriptive contents, labels and alt attributes
+- Use semantic elements, this is because if we use generic elements
+  eg: <div> we will end up have a very unspecific generic tree and won't be very accessible
+- Test if keyboard controls are usable with this tree
+
+WAI-ARIA
+(Web Accessibilty Initiative-Accessible Rich Internet Applications)
+- It is a specification for accessible HTML created by the W3C, generally referred to as ARIA.
+- It contains set of HTML attributes that can be added to provide extra information to accessibilty
+  tree.
+- ARIA attributes are usually grouped into three main categories:
+
+1. Roles: - what the element is doing, used to define purpose of the element.
+ 	  - It can be broken down into few main subgroups
+	  a. Landmark: - Major content area, navigational landmarks.
+		       - Generally defines what the user may want to go to first	
+                       - banner, main, navigation
+		       - Eg:
+			 <div role="banner">
+			    <h1> My Accessible Webpage </h1>
+			 </div>
+
+	  b. Structure: - Defines document structural information
+			- Example: tooltip, list, table
+			- Eg:
+			  <section role="list">
+			   <div role="listitem">First item </div>
+			   <div role="listitem">Second item </div>
+			   <div role="listitem">Third item </div>
+			  </section>
+
+	  c. Widgets: - Interactive elements
+		      - Example: tab, searchbox, button
+		      - Code:
+			<div role="button">
+			  Click me!
+			</div>
+
+	  d. Window roles:
+		      - sub-windows in the browser
+		      - Example: dialog, alert dialog
+		      - Code:
+			<div role="dialog" aria-labelledby="title">
+			  <h2 id="title">Sucessfully saved changes</h2>
+			  <button>Dismiss</button>
+			</div>
+
+	  e. Live region roles:
+		        - Dynamic content changes
+			- Example: timer, log, content
+			- Code:
+			  <ol role="log">
+			     <li> Chat message 1</li>
+			     <li> Chat message 2</li>
+  			     <li> Chat message 3</li>
+			  </ol>
+
+	Aria-live attribute:
+	- Dynamic content and importance
+	- off: don't announce changes
+	- polite: announce changes when idle
+	- assertive: announce changes as soon as possible
+	- Code:
+ 	 <div aria-live="polite">
+  	  My content will change!
+ 	 </div>
+
+2. Properties:
+   Used to provide extra meaning and characteristics of the elements, such as labels.
+   the important aria-properties are as follows:
+
+   - aria-label:- Used to label some elements 
+                - Label not visible on UI
+
+   - aria-labelledby:- another element as a label
+		     - passed by ID
+
+   - aria-description:- More detail than labels
+
+   - aria-describedby: - another element as description
+		       - passed by ID
+
+3. States:
+   Current state of the element, such as if it disabled
+
+   Used to provdie stateful information
+   Main aria states are as follows:
+   - aria-checked: checkbox state
+     Eg:
+	<div role="checkbox" aria-checked="true">
+	 I'm Checked!
+        </div>
+
+   - aria-disabled: element is disabled
+   - aria-expanded: Expanded or collapsed element
+   - aria-hidden: not visible on the page
+   - aria-pressed: toggle currently "pressed"
+   - aria-selected: Element is selected
+
+Sample Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Accessibility </title>
+<script src="tabs.js" defer> </script>
+<link rel="stylesheet" href="tabs.css"> 
+</head>
+
+<body>
+  <ol role="tablist">
+    <li
+	id="tab1"
+        role="tab"
+	aria-controls="panel1"
+	aria-selected="true">
+	Tab 1
+    </li>
+
+    <li
+	id="tab2"
+	role = "tab"
+	aria-controls="panel2"
+	aria-selected="false">
+	Tab 2
+    </li>
+
+    <li
+	id="tab3"
+	role = "tab"
+	aria-controls="panel3"
+	aria-selected="false">
+	Tab 3
+    </li>
+  </ol>
+
+  <div role="tabpanel" id="panel1" aria-labelledby="tab1">
+    <p> Panel 1 </p>
+  </div>
+
+  <div
+    class="hidden"
+    role="tabpanel"
+    id="panel2"
+    aria-labelledby="tab2">
+    <p> Panel2 </p>
+  </div>
+
+  <div
+    class="hidden"
+    role="tabpanel"
+    id="panel3"
+    aria-labelledby="tab3">
+    <p> Panel 3</p>
+  </div>
+
+</body>
+</html>
+

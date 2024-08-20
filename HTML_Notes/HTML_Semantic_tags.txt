@@ -1,0 +1,14 @@
+Semantic HTML: - It clearly describes the content of the page.
+	       - HTML loses its semantic when tags are misused or generic tags are
+		 overused instead of semantic tags.
+
+Semantic HTML includes the usage of semantic grouping tags, which give meaning to different
+sections of the page. These are some of the most commonly used ones:
+
+1. <article> : self contained, independently distributable content.
+2. <section> : Thematic grouping of content, not self contained.
+3. <header>  : Introductory content
+4. <main>    : Main content, only one per page
+5. <nav>     : Section of links to navigate to a certain part
+6. <aside>   : Used for contents indirectly related to content, basically non-vital info
+7. <footer>  : Copy right info, etc

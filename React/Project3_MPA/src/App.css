@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.custom-data {
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+}
+
+.custom-card {
+  height: 50px;
+  width: 700px;
+  justify-content: center;
+  color: green;
+  background-color: rgb(62, 62, 62);
+}
+
+.card-container {
+  margin-bottom: 10px;
+}
+
+.table-container {
+  width: 50%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  max-height: 80vh;
+}
+
+.custom-btn {
+  display: flex;
+  gap: 5px;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: red;
+  color: blue;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body,
+.modal-footer {
+  border-color: red;
+}
+
+.modal-title,
+.modal-body label,
+.modal-footer .btn {
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-container .col-auto {
+  margin-right: 10px;
+  width: 100px; /* Adjust the width as needed */
+}
+
+.input-data {
+  width: 300px; /* Ensures the input field fills the available space */
+}
+
+.heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: If you want to center the text within the modal title */
+  padding-left: 80px;
+}

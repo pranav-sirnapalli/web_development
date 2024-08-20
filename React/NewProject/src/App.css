@@ -1,0 +1,100 @@
+body {
+  background: linear-gradient(to right, #8984b2, #7d79a7, #8888a0);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error {
+  color: red;
+}
+
+.custom-data {
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+}
+
+.custom-card {
+  height: 50px;
+  width: 700px;
+  justify-content: center;
+
+  color: white;
+  background-color: rgb(62, 62, 62);
+}
+
+.card-container {
+  margin-bottom: 10px;
+
+}
+
+.table-container {
+  width: 50%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  max-height: 80vh;  
+}
+.custom-btn{
+  display: flex;
+  gap: 5px; 
+}
+.create{
+  display: flex;
+
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #343a40; 
+  color: white; 
+}
+
+.modal-header {
+  border-bottom: none; 
+}
+
+.modal-body, .modal-footer {
+  border-color: #454d55; 
+}
+
+.modal-title,
+.modal-body label,
+.modal-footer .btn {
+  color: white; 
+}
+.form-containeer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-containeer .col-auto {
+  margin-right: 10px;
+  width: 100px; /* Adjust the width as needed */
+}
+
+.input-data {
+  width: 300px; /* Ensures the input field fills the available space */
+   /* Adjust the value to leave room for the label */
+}
+.entire{
+ 
+  padding-left:30px;
+  padding-right:30px;
+
+}
+.heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: If you want to center the text within the modal title */
+  padding-left: 80px;
+}

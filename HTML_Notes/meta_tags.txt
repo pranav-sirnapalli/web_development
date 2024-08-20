@@ -1,0 +1,64 @@
+Meta tags:
+Metadata is special information about your webpage that can be used by search
+engines and web browsers.
+
+Important tags and attributes:
+
+- <meta>:
+  - HTML tag for providing extra metadata about a webpage.
+  - Most meta tags will use a name and content pair for the
+    type of metadata and its value.
+
+  - Some common metadata tags and appl:
+    - Sets the character encoding to utf-8
+      <meta charset="utf-8"/>
+    - Allows for custom responsive CSS, rather than the default scaling behaviour of small devices
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    - Sets the page author
+      <meta name="author"  content="Conner Ardman"/>
+    - Sets the page description
+      <meta name="description" content="Ace the frontend interviews!"/>
+
+- favicon:
+  - Also called favourite icon, the icon for a webapge.
+  - Browsers usulaly show these in a variety of places, such as next to the
+    tab name.
+  - Favicons are created using the <link> tag.
+  - <link rel="icon" href="favicon.png"/>
+
+- <base>:
+  - A tag for setting the document base URL, which will be used for all relative
+    links on the page.
+  - Code:
+    <!-- This line goes in <head> -->
+    <base href="https://algoexpert.io"/>
+
+    <!-- This would go to https://algoexpert.io/frontend it would first go to whatever was saved
+         in the base tag -- >
+    <a href="/frontend"> FrontendExpert</a>
+
+
+Sample Code:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+     name="viewport"
+     content="width=device-width, initial-scale=1"/>
+    <title>Meta Tags</title>
+    <link rel="icon" href="icon.png"/>
+    <base href="https://algoexpert.io"/>
+
+    <meta name="author" content="John doe"/>
+    <meta name="description" content="This is a great website"/>
+  </head>
+
+  <body>
+     <h1> Hello World </h1>
+     <a href="/content">Content</a>
+  </body>
+</html>
+
+

@@ -1,0 +1,83 @@
+HTML Skeleton:
+<h1> My name is Anthony Gonsalves </h1>
+
+Parts of code:
+<> -- It is known as Tag
+<h1> -- Opening Tag
+'My name is Anthony Gonsalves' -- Content
+</h1> -- Closing Tag
+Together is called an HTML Element
+
+
+In body part of our HTML Skeleton, it consists of 3 parts:
+- <header>, <main> and <footer> respectively
+- Multiple components can be added to the body: text in form of paragraph,
+  Images and Videos, Buttons and Forms.
+
+Example of code:
+<body>
+   <header>
+	<h1> This is the head of the body </h1>
+   </header>
+
+   <main>
+	<h2> This is the torso </h2>
+   </main>
+
+   <footer>
+ 	<p>  These are the feet </p>
+   </footer>
+</body>
+
+HTML Headings:
+
+<h1> is the largest heading size.
+<h6> is the smallest heading size.
+
+Paragraph Tag:
+<p> </p>
+Mulitple ssentences can be typed between opening and closing paragraph tags
+
+To separate paragraphs and add a space between then - we use something called a 'break' tag <br>.
+Interestingly, <br> does NOT need a closing tag.
+
+Bold Text:
+<b> This is bold text </b>
+<strong> this is also bold text </strong>
+
+Italicized text:
+<i> This is italicized text. </i>
+<em> This is also italicized text </em>
+
+Underlined Text:
+<u> This is underlined text. </u>
+
+Strikethrough text:
+<s> This is strikethrough text. </s>
+
+Attributes: Extra info provided to HTML elements, similar to function parameters
+	  Syntax: <tagname attribute="value"> content </tagname>
+		  <input type="checkbox" disabled="true"></input>
+		  OR
+		  <input type="checkbox" disabled="true"/>
+
+Comments in HTML:
+Syntax: <!-- write comment -->
+Ex: <!-- My name is Pranav -->
+
+
+For browser to understand doc is HTML: First line of every HTML file
+Syntax: <!DOCTYPE html>
+
+HTML Boiler Plate:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+
+</html>
+

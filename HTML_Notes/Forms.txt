@@ -1,0 +1,55 @@
+Creating of forms:
+Form tag used for sections of interactive inputs, used for submitting information to the server.
+Forms usually contain a varity of label-input paris and a submit button
+
+Tags:
+<label>: Used when we need to understand what we are taking input for
+<input>: box type which takes the input of particular type. For text, just takes
+	 simple text for password takes astrix covered input
+<fieldset>: used to create a border around whatever tags are present inside it
+<legend>: Used to give heading which is added at the top of fieldset border
+
+Attribute: 
+for: tells us for what we are taking input
+id: tells us what the identifier of this particular element is
+placeholder: used when we add default text that tells us what kind of input to put here.
+name: used when we want to know what type of data we are sending
+action: tells us where we want to submit the data we got through form
+method: tells us what method we want to use to send the data, Eg: POST, GET etc.
+minlength: used when we want the text/passwd etc to be a certain length
+required: used when you want it to be mandatory filled.
+date: to add date in input
+checkbox: for boolean
+radio button: has a name attribute which is mandatory as this attribute tells us what all fall
+	      under that particular radio button.
+
+eg:
+ <label for="username"> Username </label>
+ <input id="username" type="text"/ placeholder="user123">
+ 
+
+<body>
+<form action= "/myapi" method = "POST">
+    <label for="username"> Username </label>
+    <input type="text" required/>
+
+    <label for="password"> password </label>
+    <input id = password type="password" name="password" minlength="6"/>
+
+    <input type="date"/>
+
+    <fieldset>
+    <legend> Choose your animal </legend>
+
+    <label for="dog">Dog</label>
+    <input id="dog" type="radio" name="animal" value="dog"/>
+
+    <label for="horse">Horse</label>
+    <input id="horse" type="radio" name="animal" value="horse"/>
+    </fieldset>
+
+    <button> Submit </button>
+
+</form>
+
+</body>

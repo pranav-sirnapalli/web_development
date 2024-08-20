@@ -1,0 +1,52 @@
+Creating tables:
+- The way to understand if table is required is.
+- If you would put something in an excel sheet or tablular form
+  only then table may be required.
+
+<table>: start of table in html
+<tr>: a single row in table
+<td>: A single piece of data in the table, also referred to as a cell
+<th>: Heading in the table, this should be used with the scope attr. of
+      either row or col to choose what the content is a heading for.
+      Attribute called scope used to understand whether it is wrt col or row.
+<thead>: A grouping tag for heading of a table usualy containing a single <tr> with column heading
+<tbody>: A grouping tag for the body of the table, used for containing primary rows of data.
+<tfoot>: A gouping tag for footer fo the table
+
+Other attributes we can add:
+colspan: how many columns you want to combine to add on that tag
+rowspan: how many rows you want to combine to add on that tag
+
+
+<body>
+  <table>
+    <caption> Budget </caption>
+    <thead>
+    <tr>
+       <th scope="col"> Category </th>
+       <th colspan="2"> Budget </th>
+       <th> Spending </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+       <th scope="row"> Food </th>
+       <td> $200 </td>
+       <td> $100 </td>
+    </tr>
+
+    <tr>
+       <td rowspan="2"> $250 </td>
+       <td> $300 </td>
+    </tr>
+    </tbody>
+    <tfoot>
+     <tr>
+ 	<td> Total </td>
+  	<td> 1000 </td>
+  	<td> 2000 </td>
+     <tr>
+    </tfoot>
+  </table>
+</body>
